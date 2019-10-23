@@ -32,6 +32,7 @@ public class main {
         ArrayList key = new ArrayList();
         ArrayList value = new ArrayList();
 
+	//opciones
         key.add("opcion1");
         value.add("22");
 
@@ -67,7 +68,7 @@ public class main {
             Element raiz = document.getDocumentElement();
 
             
-            //Por cada key creamos un item que contendr· la key y el value
+            //Por cada key creamos un item que contendr√° la key y el value
             for(int i=0; i<key.size();i++){
                 //Item Node
                 Element itemNode = document.createElement("ITEM"); 
@@ -103,7 +104,7 @@ public class main {
 					e.printStackTrace();
 		        }
 
-	        //AÒadimos el atributo y generamos el archivo .xml formateado
+	        //A√±adimos el atributo y generamos el archivo .xml formateado
 	        int pos = sDoc.indexOf("Document");	        
 	        String sDocument = sDoc.substring(0, pos+8) + " xmlns=\"urn:iso:std:iso:20022:tech:xsd:pain.001.001.03\"" +  sDoc.substring(pos+8,sDoc.length()-1);
 	        String sFile = "C:/fichero.xml";
@@ -113,7 +114,7 @@ public class main {
 	        bw.close();
 	        
            
-            //Generamos el archivo .xml son formatear
+            //Generamos el archivo .xml sin formatear
             Result result = new StreamResult(new java.io.File("C:/"+name+".xml")); //nombre del archivo
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
             transformer.transform(source, result);
